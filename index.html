@@ -146,12 +146,50 @@
       color: var(--text);
       font-weight: 700;
       text-decoration:none;
+      cursor: pointer;
     }
     .btn.primary{
       border-color: rgba(125,211,252,.45);
       background: linear-gradient(135deg, rgba(125,211,252,.18), rgba(167,139,250,.14));
     }
     .btn:hover{ filter: brightness(1.08); text-decoration:none; }
+
+    /* Forms */
+    form{
+      margin-top: 12px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    label{
+      font-size: .9rem;
+      color: var(--muted);
+      display:block;
+      margin-bottom: 6px;
+    }
+    input, textarea{
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(15,26,48,.80);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+    }
+    textarea{ resize: vertical; min-height: 120px; }
+
+    .form-row{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    @media (min-width: 860px){
+      .form-row{ grid-template-columns: 1fr 1fr; }
+    }
+
+    /* Optional: improve long URLs wrapping */
+    .wrap-anywhere{ overflow-wrap: anywhere; word-break: break-word; }
 
     footer{
       margin-top: 18px;
@@ -160,9 +198,6 @@
       color: var(--muted);
       font-size: .9rem;
     }
-
-    /* Optional: improve long URLs wrapping */
-    .wrap-anywhere{ overflow-wrap: anywhere; word-break: break-word; }
   </style>
 </head>
 
@@ -179,7 +214,7 @@
 
     <div class="grid">
 
-      <section class="card">
+      <section class="card" id="problem">
         <h2>Federal Security Is Not Just Documentation</h2>
         <p class="muted">Many federal SaaS platforms struggle with:</p>
         <ul>
@@ -193,7 +228,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section class="card" id="what-we-do">
         <h2>What We Do</h2>
         <p class="muted">VectorFortress provides executive-level advisory focused on:</p>
         <ul>
@@ -208,7 +243,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section class="card" id="who-we-advise">
         <h2>Who We Advise</h2>
         <ul>
           <li>GovTech startups entering federal markets</li>
@@ -218,7 +253,7 @@
         </ul>
       </section>
 
-      <section class="card">
+      <section class="card" id="signature">
         <h2>Signature Engagement</h2>
         <div class="callout">
           <h3>Federal Authorization Strategy Diagnostic</h3>
@@ -233,7 +268,7 @@
         </div>
       </section>
 
-      <section class="card span-2">
+      <section class="card span-2" id="about">
         <h2>About the Founder</h2>
         <p>
           Kudeha Atila is a federal technology executive with over 15 years of IT leadership experience and
@@ -274,7 +309,7 @@
         </p>
       </section>
 
-      <section class="card">
+      <section class="card" id="philosophy">
         <h2>Our Philosophy</h2>
         <p class="muted">Federal security should be:</p>
         <ul>
@@ -286,7 +321,7 @@
         <p class="muted">Compliance should accelerate progress — not stall it.</p>
       </section>
 
-      <section class="card">
+      <section class="card" id="start">
         <h2>Start the Conversation</h2>
         <p class="muted">
           If your organization is navigating federal authorization or modernizing cloud security governance,
@@ -294,16 +329,50 @@
         </p>
 
         <div class="cta-row">
-          <!-- Replace href with your Calendly / booking link -->
           <a class="btn primary" href="#contact">Request a Strategy Call</a>
           <a class="btn" href="#signature">View Signature Engagement</a>
         </div>
 
-        <!-- Optional placeholder for future contact form -->
         <div id="contact" class="callout" style="margin-top:12px;">
-          <p class="muted" style="margin:0;">
-            <strong>Next step:</strong> Add your scheduling link or contact form here.
+          <h3>Request a Strategy Call</h3>
+          <p class="muted" style="margin-top:0;">
+            Next step: Complete the form below and we’ll respond via email.
           </p>
+
+          <form action="mailto:nc_aistg@outlook.com" method="POST" enctype="text/plain">
+            <div class="form-row">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="Name" type="text" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" placeholder="you@company.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="org">Organization</label>
+                <input id="org" name="Organization" type="text" placeholder="Company / Agency (optional)" />
+              </div>
+              <div>
+                <label for="topic">Topic</label>
+                <input id="topic" name="Topic" type="text" placeholder="Authorization / Cloud governance / Security modernization" />
+              </div>
+            </div>
+
+            <div>
+              <label for="msg">Message</label>
+              <textarea id="msg" name="Message" placeholder="Briefly describe your needs and desired timeline..." required></textarea>
+            </div>
+
+            <button class="btn primary" type="submit">Send Request</button>
+
+            <p class="muted" style="margin:10px 0 0;">
+              Prefer email? Contact us at <a href="mailto:nc_aistg@outlook.com">nc_aistg@outlook.com</a>.
+            </p>
+          </form>
         </div>
       </section>
 
