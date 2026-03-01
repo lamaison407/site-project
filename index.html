@@ -1,145 +1,321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VectorFortress | Federal Cloud Security & Authorization Strategy</title>
-  <meta name="description" content="VectorFortress provides executive-level federal cloud security and authorization strategy advisory services.">
+  <meta name="description" content="VectorFortress helps GovTech companies and federal contractors design modern authorization strategies for cloud-native systems—without unnecessary compliance friction." />
+
+  <style>
+    :root{
+      --bg: #0b1220;          /* deep navy */
+      --panel: #0f1a30;       /* slightly lighter navy */
+      --text: #e7edf7;        /* soft white */
+      --muted: #b8c6dc;       /* muted blue-gray */
+      --border: rgba(231,237,247,.14);
+      --accent: #7dd3fc;      /* light sky */
+      --accent2:#a78bfa;      /* soft violet */
+      --max: 980px;
+      --radius: 16px;
+      --shadow: 0 16px 50px rgba(0,0,0,.35);
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 15% 10%, rgba(125,211,252,.18), transparent 55%),
+                  radial-gradient(900px 600px at 80% 20%, rgba(167,139,250,.16), transparent 55%),
+                  radial-gradient(800px 600px at 50% 100%, rgba(125,211,252,.10), transparent 60%),
+                  var(--bg);
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    header{
+      padding: 22px 0 8px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(15,26,48,.55);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    h1{
+      margin: 14px 0 6px;
+      font-size: clamp(1.8rem, 2.6vw, 2.35rem);
+      line-height: 1.15;
+    }
+
+    .subhead{
+      margin: 0 0 16px;
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    @media (min-width: 860px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+      .span-2{ grid-column: span 2; }
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(15,26,48,.60);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+      padding: 18px 18px 16px;
+    }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+      letter-spacing: .2px;
+    }
+
+    p{ margin: 0 0 12px; color: var(--text); }
+    .muted{ color: var(--muted); }
+
+    ul{
+      margin: 10px 0 12px 20px;
+      padding: 0;
+      color: var(--text);
+    }
+    li{ margin: 6px 0; }
+
+    .kicker{
+      font-size: .9rem;
+      color: var(--muted);
+      margin-top: -4px;
+    }
+
+    .callout{
+      border: 1px solid rgba(125,211,252,.25);
+      background: linear-gradient(135deg, rgba(125,211,252,.12), rgba(167,139,250,.08));
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+    }
+
+    .callout h3{
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(231,237,247,.20);
+      background: rgba(231,237,247,.06);
+      color: var(--text);
+      font-weight: 700;
+      text-decoration:none;
+    }
+    .btn.primary{
+      border-color: rgba(125,211,252,.45);
+      background: linear-gradient(135deg, rgba(125,211,252,.18), rgba(167,139,250,.14));
+    }
+    .btn:hover{ filter: brightness(1.08); text-decoration:none; }
+
+    footer{
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    /* Optional: improve long URLs wrapping */
+    .wrap-anywhere{ overflow-wrap: anywhere; word-break: break-word; }
+  </style>
 </head>
 
 <body>
+  <div class="wrap">
+    <header>
+      <div class="badge">🛡️ VectorFortress</div>
+      <h1>Federal Cloud Security &amp; Authorization Strategy</h1>
+      <p class="subhead">
+        We help GovTech companies and federal contractors design clear, modern authorization strategies
+        for cloud-native systems — without unnecessary compliance friction.
+      </p>
+    </header>
 
-  <header>
-    <h1>🛡️ <b>VectorFortress </b>> </h1>
-    <h2>Federal Cloud Security &amp; Authorization Strategy</h2>
-    <p>
-      We help GovTech companies and federal contractors design clear, modern authorization strategies 
-      for cloud-native systems — without unnecessary compliance friction.
-    </p>
-  </header>
+    <div class="grid">
 
-  <section>
-    <h3>Federal Security Is Not Just Documentation</h3>
-    <p>Many federal SaaS platforms struggle with:</p>
-    <ul>
-      <li>Lengthy authorization timelines</li>
-      <li>Overcomplicated SSP development</li>
-      <li>Misalignment between engineering and compliance</li>
-      <li>Executive uncertainty around risk posture</li>
-    </ul>
-    <p>
-      Modern cloud systems require structured, strategic authorization design — 
-      not recycled legacy models.
-    </p>
-  </section>
+      <section class="card">
+        <h2>Federal Security Is Not Just Documentation</h2>
+        <p class="muted">Many federal SaaS platforms struggle with:</p>
+        <ul>
+          <li>Lengthy authorization timelines</li>
+          <li>Overcomplicated SSP development</li>
+          <li>Misalignment between engineering and compliance</li>
+          <li>Executive uncertainty around risk posture</li>
+        </ul>
+        <p class="muted">
+          Modern cloud systems require structured, strategic authorization design — not recycled legacy models.
+        </p>
+      </section>
 
-  <section>
-    <h3>What We Do</h3>
-    <p>VectorFortress provides executive-level advisory focused on:</p>
-    <ul>
-      <li>Cloud-native authorization strategy</li>
-      <li>SSP architecture structuring</li>
-      <li>NIST 800-53 control alignment</li>
-      <li>Governance and risk modernization</li>
-      <li>Executive security roadmap development</li>
-    </ul>
-    <p>
-      We help organizations reduce uncertainty, improve clarity, 
-      and accelerate authorization readiness.
-    </p>
-  </section>
+      <section class="card">
+        <h2>What We Do</h2>
+        <p class="muted">VectorFortress provides executive-level advisory focused on:</p>
+        <ul>
+          <li>Cloud-native authorization strategy</li>
+          <li>SSP architecture structuring</li>
+          <li>NIST 800-53 control alignment</li>
+          <li>Governance and risk modernization</li>
+          <li>Executive security roadmap development</li>
+        </ul>
+        <p class="muted">
+          We help organizations reduce uncertainty, improve clarity, and accelerate authorization readiness.
+        </p>
+      </section>
 
-  <section>
-    <h3>Who We Advise</h3>
-    <ul>
-      <li>GovTech startups entering federal markets</li>
-      <li>SaaS platforms preparing for federal authorization</li>
-      <li>Contractors modernizing legacy security programs</li>
-      <li>Executive teams seeking structured compliance strategy</li>
-    </ul>
-  </section>
+      <section class="card">
+        <h2>Who We Advise</h2>
+        <ul>
+          <li>GovTech startups entering federal markets</li>
+          <li>SaaS platforms preparing for federal authorization</li>
+          <li>Contractors modernizing legacy security programs</li>
+          <li>Executive teams seeking structured compliance strategy</li>
+        </ul>
+      </section>
 
-  <section>
-    <h3>Signature Engagement</h3>
-    <h4>Federal Authorization Strategy Diagnostic</h4>
-    <p>A focused advisory engagement designed to:</p>
-    <ul>
-      <li>Assess current authorization posture</li>
-      <li>Identify structural inefficiencies</li>
-      <li>Align security architecture with federal expectations</li>
-      <li>Deliver a concise executive roadmap</li>
-    </ul>
-    <p>
-      This is strategic advisory — not checklist compliance consulting.
-    </p>
-  </section>
+      <section class="card">
+        <h2>Signature Engagement</h2>
+        <div class="callout">
+          <h3>Federal Authorization Strategy Diagnostic</h3>
+          <p class="muted">A focused advisory engagement designed to:</p>
+          <ul>
+            <li>Assess current authorization posture</li>
+            <li>Identify structural inefficiencies</li>
+            <li>Align security architecture with federal expectations</li>
+            <li>Deliver a concise executive roadmap</li>
+          </ul>
+          <p class="kicker">This is strategic advisory — not checklist compliance consulting.</p>
+        </div>
+      </section>
 
-  <section>
-    <h3>About the Founder</h3>
-    <p>
-      Kudeha Atila is a federal technology executive with over 15 years of IT leadership experience 
-      and extensive experience directing cloud security and compliance initiatives within the U.S. federal ecosystem.
-    </p>
+      <section class="card span-2">
+        <h2>About the Founder</h2>
+        <p>
+          Kudeha Atila is a federal technology executive with over 15 years of IT leadership experience and
+          extensive experience directing cloud security and compliance initiatives within the U.S. federal ecosystem.
+        </p>
 
-    <p>His work focuses on the intersection of:</p>
-    <ul>
-      <li>Cloud-native system architecture</li>
-      <li>Federal authorization strategy</li>
-      <li>Governance and risk alignment</li>
-      <li>Executive-level security modernization</li>
-    </ul>
+        <p class="muted">His work focuses on the intersection of:</p>
+        <ul>
+          <li>Cloud-native system architecture</li>
+          <li>Federal authorization strategy</li>
+          <li>Governance and risk alignment</li>
+          <li>Executive-level security modernization</li>
+        </ul>
 
-    <p>
-      Recognized for aligning cybersecurity strategy with mission delivery, regulatory compliance, 
-      and digital modernization at scale.
-    </p>
+        <p class="muted">
+          Recognized for aligning cybersecurity strategy with mission delivery, regulatory compliance, and digital modernization at scale.
+        </p>
 
-    <p>
-      Presented on modernizing federal digital services, including 
-      <a href="https://csrc.nist.gov/presentations/2024/deploying-federal-websites-faster" target="_blank">
-        Deploying Federal Websites Faster
-      </a> 
-      for the NIST Cybersecurity &amp; Privacy Controls community.
-    </p>
+        <p class="wrap-anywhere muted">
+          Presented on modernizing federal digital services, including
+          <a href="https://csrc.nist.gov/presentations/2024/deploying-federal-websites-faster" target="_blank" rel="noopener">
+            Deploying Federal Websites Faster
+          </a>
+          for the NIST Cybersecurity &amp; Privacy Controls community.
+        </p>
 
-    <p>
-      Co-author and Editor of 
-      <a href="https://www.amazon.com/How-Pass-CRISC-Exam-Information/dp/0692170472/ref=sr_1_1?crid=3JVWPD77XOUY5&dib=eyJ2IjoiMSJ9.ETt0nEDUjI4aDVvOqdlidA.75IjwilhglL3Nx2V7a93hepxSCcCU2F8cNHuOFcguh4&dib_tag=se&keywords=Kudeha+Atila&qid=1772061294&s=digital-text&sprefix=kudeha+atila%2Cdigital-text%2C402&sr=1-1" target="_blank">
-        How to Pass the CRISC Exam
-      </a>, 
-      a resource for IT professionals advancing in enterprise risk and control strategy.
-    </p>
+        <p class="wrap-anywhere muted">
+          Co-author and Editor of
+          <a href="https://www.amazon.com/How-Pass-CRISC-Exam-Information/dp/0692170472/ref=sr_1_1?crid=3JVWPD77XOUY5&dib=eyJ2IjoiMSJ9.ETt0nEDUjI4aDVvOqdlidA.75IjwilhglL3Nx2V7a93hepxSCcCU2F8cNHuOFcguh4&dib_tag=se&keywords=Kudeha+Atila&qid=1772061294&s=digital-text&sprefix=kudeha+atila%2Cdigital-text%2C402&sr=1-1"
+             target="_blank" rel="noopener">
+            How to Pass the CRISC Exam
+          </a>,
+          a resource for IT professionals advancing in enterprise risk and control strategy.
+        </p>
 
-    <p>
-      VectorFortress was founded to bring clarity, structure, and strategic direction 
-      to federal cloud security efforts.
-    </p>
-  </section>
+        <p class="muted">
+          VectorFortress was founded to bring clarity, structure, and strategic direction to federal cloud security efforts.
+        </p>
+      </section>
 
-  <section>
-    <h3>Our Philosophy</h3>
-    <p>Federal security should be:</p>
-    <ul>
-      <li>Structured</li>
-      <li>Modern</li>
-      <li>Aligned with engineering realities</li>
-      <li>Executively understandable</li>
-    </ul>
-    <p>
-      Compliance should accelerate progress — not stall it.
-    </p>
-  </section>
+      <section class="card">
+        <h2>Our Philosophy</h2>
+        <p class="muted">Federal security should be:</p>
+        <ul>
+          <li>Structured</li>
+          <li>Modern</li>
+          <li>Aligned with engineering realities</li>
+          <li>Executively understandable</li>
+        </ul>
+        <p class="muted">Compliance should accelerate progress — not stall it.</p>
+      </section>
 
-  <section>
-    <h3>Start the Conversation</h3>
-    <p>
-      If your organization is navigating federal authorization or modernizing cloud security governance, 
-      we welcome a strategic discussion.
-    </p>
-    <p>
-      <a href="#contact">Request a Strategy Call</a>
-    </p>
-  </section>
+      <section class="card">
+        <h2>Start the Conversation</h2>
+        <p class="muted">
+          If your organization is navigating federal authorization or modernizing cloud security governance,
+          we welcome a strategic discussion.
+        </p>
 
+        <div class="cta-row">
+          <!-- Replace href with your Calendly / booking link -->
+          <a class="btn primary" href="#contact">Request a Strategy Call</a>
+          <a class="btn" href="#signature">View Signature Engagement</a>
+        </div>
+
+        <!-- Optional placeholder for future contact form -->
+        <div id="contact" class="callout" style="margin-top:12px;">
+          <p class="muted" style="margin:0;">
+            <strong>Next step:</strong> Add your scheduling link or contact form here.
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <footer>
+      <span>&copy; <span id="year"></span> VectorFortress. All rights reserved.</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
